@@ -279,3 +279,55 @@ img {
         order: -1;
     }
 }
+
+/* Qualidade */
+
+.qualidade {
+    max-width: 960px;
+    margin: 60px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.qualidade-item {
+    /* Daria para usar o calc nesse da porcentagem, mas em alguns browsers não iria funcionar */
+    flex: 1 1 300px; /* Colocar porcentagem de 33.333% não iria funcionar por causa da margin de 10px de um lado para o outro */
+    margin: 20px 10px;
+}
+
+.qualidade-item h2 {
+    font-size: 2.25em;
+    color: #a4a4a4;
+    margin-bottom: 20px;
+}
+
+.qualidade-item h2:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: blue;
+}
+
+/* Quero falar com o item de número 3 que possue a classe qualidade-item e modificar o h2 before */
+/* 3n + 1 -> selecionar o primeiro + p terceiro item após ele e assim vai indo */
+.qualidade-item:nth-of-type(3n + 1) h2::before {
+    background: #ae81ff;
+}
+
+/* 3n + 2 -> selecionar o segundo + o terceiro item após ele e assim vai indo */
+.qualidade-item:nth-of-type(3n + 2) h2::before {
+    background: #f9265e;
+}
+
+/* 3n + 3 -> selecionar o terceiro + o terceiro item após ele e assim vai indo */
+.qualidade-item:nth-of-type(3n + 3) h2::before {
+    background: #66d9eb;
+}
+
+.qualidade-item p {
+    font-size: 1.25em;
+    line-height: 1.4;
+    color: #7c7c7c;
+}
