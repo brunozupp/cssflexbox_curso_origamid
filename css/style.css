@@ -1,0 +1,31 @@
+body, h1, h2, p, ul, li, a {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Nunito", Helvetica, Arial, sans-serif;
+    color: #222;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%; /* Com isso não vai passar e ficar aquele scroll */
+}
+
+* {
+    box-sizing: border-box;
+    /*
+        Se deixar sem a propriedade box-sizing, ele vai somar o width + padding e somar,
+        então se eu coloquei um width de 300 e um padding de 60, o total do width renderizado
+        vai dar 360. Com essa propriedade vai ficar 300
+    */
+}
