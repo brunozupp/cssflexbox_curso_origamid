@@ -1,0 +1,32 @@
+Existem dois grupos principais:
+- Flex Container
+- Flex Item (os itens que estão dentro do container e como vão se comportar)
+
+-- Flex Container
+
+* justify-context: só funciona se os itens atuais não ocuparem todo o container. Se a direção for 
+em coluna, precisa ter uma altura maior do que os itens ocupam.
+
+* align-items: O align-items alinha os flex itens de acordo com o eixo do container. O alinhamento
+é diferente para quando os itens estão em colunas ou linhas. Essa propriedade peremite o alinhamento
+central no eixo vertical.
+
+Macete para o alinhamento central: justify-content: center e align-items: center. No caso o
+justify-content: center vai centralizar o item no centro (na horizontal), mas o comportamento dele 
+é de aumentar o tamanho da altura do item no máximo para caber no height definido. Por isso que
+é preciso colocar o align-items: center, pois ele vai suprimir o item para o seu tamanho normal (na vertical)
+
+* align-content: só vai funcionar se tiver mais de uma linha. O container deve ser maior (height)
+do que a soma das alturas das linhas. Alinhas as linhas do container em relação
+ao eixo vertical. O flex-wrap precisa ser wrap.
+
+-- Flex Item: são os filhos diretos do flex-container
+
+* flex-basis: sempre vai respeitar o conteúdo para o tamanho. Indica o tamanho inicial do flex item 
+antes da distribuição do espaço restante. Quendo definimos o flex-grow: 1; e possuímos auto no basis,
+o valor restante para ocupar o container é distribuído ao redor do conteúdo do flex-item.
+
+* flex-shrink: define a capacidade de redução de tamanho do item. Se eu passar o valor 0 ele
+não vai diminuir os itens
+
+* flex: atalho para as propriedades flex-grow, flex-shrink e flex-basis 
